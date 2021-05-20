@@ -12,7 +12,7 @@ class UserTableSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        $this->_create(['name' => 'Mr. Developer', 'email' => 'developer@example.com', 'password' => bcrypt('@cc3$$#COM'), 'role_id' => '1','is_active'=>true]);
+        $this->_create(['name' => 'Test User ', 'email' => 'test.user@example.com', 'password' => bcrypt('@cc3$$#COM'), 'role_id' => '1','is_active'=>true]);
         $this->_create(['name' => 'Mr. Admin', 'email' => 'admin@example.com', 'password' => bcrypt('@cc3$$#COM'), 'role_id' => '2','is_active'=>true]);
     }
     

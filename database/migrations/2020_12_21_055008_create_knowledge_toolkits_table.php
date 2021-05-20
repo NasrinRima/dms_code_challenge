@@ -17,9 +17,11 @@ class CreateKnowledgeToolkitsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->boolean('status')->default(True);
+            $table->unsignedBigInteger('order');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');;
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');;

@@ -8,10 +8,9 @@
         <!-- Tabs Titles -->
 
         <!-- Icon -->
-        <div class="fadeIn first mt-3">
-<!--            <img src="http://www.w3.org/2000/svg" id="icon" alt="User Icon" />-->
+        <div class="fadeIn first mt-3 mb-2">
             <a href="/">
-                <img width="80px" src="/media/logos/dnet_new.png">
+                <!-- <img width="80px" src="/media/logos/dnet_new.png"> -->
             </a>
         </div>
 
@@ -24,7 +23,7 @@
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
-            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
             @error('password')
             <span class="invalid-feedback text-danger" role="alert">
                 <strong>{{ $message }}</strong>
@@ -32,14 +31,11 @@
             @enderror
             <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
-
         <!-- Remind Passowrd -->
         <div id="formFooter">
-<!--            <a class="underlineHover" href="#">Forgot Password?</a>-->
-
             @if (Route::has('password.request'))
             <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                {{ __('Forgot your password?') }}
+                {{ __('Forgot password?') }}
             </a>
             @endif
         </div>
@@ -368,4 +364,4 @@
         width:60%;
     }
 
-</st
+</style>

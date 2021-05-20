@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\igration;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class UsersController extends Controller
 {
@@ -93,6 +93,7 @@ class UsersController extends Controller
      */
     public function logout(Request $request)
     {
+
         Auth::logout();
 
         $request->session()->invalidate();

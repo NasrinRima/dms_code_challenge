@@ -16,15 +16,12 @@
     <div class="brand flex-column-auto {{ Metronic::printClasses('brand', false) }}" id="kt_brand">
         <div class="brand-logo">
             <a href="{{ url('/admin/dashboard') }}">
-                <img alt="{{ config('app.name') }}" src="{{ asset('media/logos/'.$kt_logo_image) }}"/>
+                <h6 style="font-size: 14px;"><strong>PREPARE</strong></h6>
+                <!--                <img alt="{{ config('app.name') }}" src="{{ asset('media/logos/'.$kt_logo_image) }}"/>-->
             </a>
         </div>
 
-        @if (config('layout.aside.self.minimize.toggle'))
-            <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
-                {{ Metronic::getSVG("media/svg/icons/Navigation/Angle-double-left.svg", "svg-icon-xl") }}
-            </button>
-        @endif
+
 
     </div>
 
@@ -44,7 +41,6 @@
             class="aside-menu my-4 {{ Metronic::printClasses('aside_menu', false) }}"
             data-menu-vertical="1"
             {{ Metronic::printAttrs('aside_menu') }}>
-
             <ul class="menu-nav {{ Metronic::printClasses('aside_menu_nav', false) }}">
                 @include('layout.partials.left_menu')
             </ul>
