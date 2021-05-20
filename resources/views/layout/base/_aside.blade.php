@@ -16,7 +16,7 @@
     <div class="brand flex-column-auto {{ Metronic::printClasses('brand', false) }}" id="kt_brand">
         <div class="brand-logo">
             <a href="{{ url('/admin/dashboard') }}">
-                <h6 style="font-size: 14px;"><strong>PREPARE</strong></h6>
+                <h6 style="font-size: 14px;"><strong>DMS Code Challenge</strong></h6>
                 <!--                <img alt="{{ config('app.name') }}" src="{{ asset('media/logos/'.$kt_logo_image) }}"/>-->
             </a>
         </div>
