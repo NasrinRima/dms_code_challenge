@@ -1,3 +1,9 @@
+<style type="text/css">
+    .p-style {
+        color:#25A5F6;
+        font-size: 15px;
+    }
+</style>
 {{-- Extends layout --}}
 @extends('layout.default')
 
@@ -18,6 +24,8 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title"> <i class="fa fa-list"></i>List of Books </h3>
+
+                            <p class="p-style" id="success-msg"></p>
                            
                             <div class="float-right">
                                 <form action="" method="get">
@@ -58,7 +66,9 @@
                                     <td>{{ $book->category??'' }}</td>
                                     <td>{{$book->name??'' }}</td>
                                     <td>{{ $book->price??''  }}</td>
-                                    <td><a class="btn btn-sm btn-primary" href="/{{app()->getLocale()}}/admin"><i class="fa fa-plus "></i></a></td>                                    
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <td><a class="btn btn-sm btn-primary" href="#" onclick="addToCart({{ $book->id }})"><i class="fa fa-plus "></i></a></td>
+
                                 </tr>
                                 @empty
                                 <tr><td colspan="5">No data found!</td></tr>
@@ -92,7 +102,28 @@
 {{-- page scripts --}}
 <script src="{{ asset('js/pages/crud/datatables/basic/basic.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+    function addToCart(bookId) {
+            $.ajax({
+                url: "/user/add-to-cart",
+                type: 'get',
+                dataType: 'json',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    "bookId": bookId
+                },
+                success: function (response) {
+                document.getElementById('success-msg').innerHTML = "This Book is added to your cart list!!";
 
+                   location.reload();
+
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+        }
+</script>
 
 @endsection
 

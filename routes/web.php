@@ -7,7 +7,9 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\Backend\BookController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\CartController;
+
 
 
 
@@ -27,7 +29,7 @@ Route::post('/forgot-password',[ForgotPasswordController::class,'sendResetLinkEm
 Route::post('/reset-password',[ResetPasswordController::class,'reset'])->name('password.update');
     Route::get('/', [DashboardController::class,'index']);
 
-    Route::group(['prefix' => 'admin','middleware' => ['resource.maker','auth.acl']], function () {
+    Route::group(['prefix' => 'user','middleware' => ['resource.maker','auth.acl']], function () {
         Route::get('/my-profile', [UsersController::class,'myProfile']);
         Route::get('/edit-profile', [UsersController::class,'editProfile']);
         Route::post('/update-profile', [UsersController::class,'updateProfile']);
@@ -37,6 +39,9 @@ Route::post('/reset-password',[ResetPasswordController::class,'reset'])->name('p
         Route::get('/dashboard', [DashboardController::class,'index']);
         Route::get('/logout',[UsersController::class,'logout']);
         Route::resource('/books', BookController::class);
+        Route::get('/add-to-cart',[CartController::class,'addToShoppingCart']);
+        Route::resource('/my-cart', BookController::class);
+
         // Route::resource('/faq', FaqController::class);
 
     });

@@ -21,7 +21,7 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
     public function index(Request $request){
-        return redirect('/admin/books');       
+        return redirect('/user/books');       
     }
 
     public function create(){
