@@ -42,6 +42,4 @@ Route::post('/reset-password',[ResetPasswordController::class,'reset'])->name('p
         Route::get('/add-to-cart',[CartController::class,'addToShoppingCart']);
         Route::resource('/my-cart', CartController::class);
 
-        // Route::resource('/faq', FaqController::class);
-
     });
