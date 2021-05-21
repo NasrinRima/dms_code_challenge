@@ -26,7 +26,7 @@ class BookController extends Controller
                
             }
             $books = $query->paginate(30);
-            return view('backend.books.list',compact('books'));
+            return view('books.list',compact('books'));
         } catch (Exception $e) {
             echo 'Caught exception: ', $e->getMessage(), "\n";
         }

@@ -18,7 +18,25 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+         try {
+            $myCarts = ShoppingCartInfo::join('books','books.id','=','shopping_cart_info.book_id')
+                        ->where('user_id',authID())->get();
+
+            $totalPrice = ShoppingCartInfo::join('books','books.id','=','shopping_cart_info.book_id')
+                        ->select(DB::raw('SUM(books.price) AS total'))
+                        ->where('user_id',authID())->first();
+                        // return $totalPrice;
+
+            $noOfBooks = $myCarts->count();
+            if($noOfBooks>=10){
+                $discount = ($totalPrice->total*5)/100;
+                $totalPrice = $totalPrice->total-$discount;
+            }
+           
+            return view('cart_info.my_cart',compact('myCarts','noOfBooks','totalPrice'));
+        } catch (Exception $e) {
+            echo 'Caught exception: ', $e->getMessage(), "\n";
+        }
     }
 
     /**

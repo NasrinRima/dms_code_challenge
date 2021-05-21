@@ -16,5 +16,5 @@ class ShoppingCartInfo extends Model
     protected $fillable = [
         'user_id','book_id'
     ];
-
+    
 }

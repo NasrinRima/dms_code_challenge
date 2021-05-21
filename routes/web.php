@@ -40,7 +40,7 @@ Route::post('/reset-password',[ResetPasswordController::class,'reset'])->name('p
         Route::get('/logout',[UsersController::class,'logout']);
         Route::resource('/books', BookController::class);
         Route::get('/add-to-cart',[CartController::class,'addToShoppingCart']);
-        Route::resource('/my-cart', BookController::class);
+        Route::resource('/my-cart', CartController::class);
 
         // Route::resource('/faq', FaqController::class);
 

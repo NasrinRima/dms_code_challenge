@@ -109,7 +109,7 @@
                 type: 'get',
                 dataType: 'json',
                 data: {
-                    "_token": "{{ csrf_token() }}",
+                    // "_token": "{{ csrf_token() }}",
                     "bookId": bookId
                 },
                 success: function (response) {
