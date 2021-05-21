@@ -60,3 +60,28 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Installation
+
+Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
+
+Alternative installation is possible without local dependencies relying on [Docker](#docker). 
+
+Clone the repository
+
+    git clone https://github.com/NasrinRima/dms_code_challenge.git
+
+Switch to the repo folder
+
+    cd dms_code_challenge
+
+Install all the dependencies using composer
+
+    composer install
+
+Copy the example env file and make the required configuration changes in the .env file
+
+    cp .env.example .env
+
+Generate a new application key
+
+    php artisan key:generate
