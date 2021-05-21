@@ -16,10 +16,20 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $books = Book::get();
-        return view('backend.books.list',compact('books'));
+        
+        try {
+            $query = Book::select();
+            if ($request->type) {
+                $query = $query->where('category', 'LIKE', "%{$request->type}%");
+               
+            }
+            $books = $query->paginate(30);
+            return view('backend.books.list',compact('books'));
+        } catch (Exception $e) {
+            echo 'Caught exception: ', $e->getMessage(), "\n";
+        }
     }
 
     /**

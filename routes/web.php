@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
-//use App\Http\Controllers\Auth\UsersController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Auth\ForgotPasswordController;

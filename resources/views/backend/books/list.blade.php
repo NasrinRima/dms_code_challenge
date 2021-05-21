@@ -18,17 +18,20 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title"> <i class="fa fa-list"></i>List of Books </h3>
+                           
                             <div class="float-right">
-                                <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <select class="form-control" name="type" required id="type">
-                                            <option value=''>Select Category</option>                                       
-                                            <option value='Children'>Children</option>
-                                            <option value='Fiction'>Fiction</option>
+                                <form action="" method="get">
+                                    <div class="input-group pr-2 col-sm-12">
+                                         <select class="form-control" name="type"  id="type" >
+                                            <option value=''>All Categories</option>                                       
+                                            <option value='Children' <?php echo (app('request')->input('type') == 'Children') ? 'selected' : ''?>>Children</option>
+                                            <option value='Fiction' <?php echo (app('request')->input('type') == 'Fiction') ? 'selected' : ''?>>Fiction</option>
                                         </select>
-                                       
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-primary" type="submit">Find</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                            
                         </div>
@@ -89,6 +92,7 @@
 {{-- page scripts --}}
 <script src="{{ asset('js/pages/crud/datatables/basic/basic.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+
 
 @endsection
 
