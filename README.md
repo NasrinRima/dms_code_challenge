@@ -72,7 +72,7 @@ Clone the repository
 
 Switch to the repo folder
 
-    cd dms_code_challenge
+    cd red_army_rockers
 
 Install all the dependencies using composer
 
