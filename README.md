@@ -68,7 +68,7 @@ Alternative installation is possible without local dependencies relying on [Dock
 
 Clone the repository
 
-    git clone https://github.com/NasrinRima/dms_code_challenge.git
+    git clone https://gitlab.com/rimakhan.14213/red_army_rockers_nasrin_rima_2021_05_20.git
 
 Switch to the repo folder
 
