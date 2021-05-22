@@ -68,11 +68,11 @@ Alternative installation is possible without local dependencies relying on [Dock
 
 Clone the repository
 
-    git clone https://gitlab.com/rimakhan.14213/red_army_rockers_nasrin_rima_2021_05_20.git
+    git clone https://github.com/NasrinRima/dms_code_challenge
 
 Switch to the repo folder
 
-    cd red_army_rockers
+    cd dms_code_challenge
 
 Install all the dependencies using composer
 
